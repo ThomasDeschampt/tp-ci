@@ -1,7 +1,21 @@
 pipeline {
     agent any
     
+    tools {
+        // Configuration Maven pour Jenkins
+        maven 'Maven-3.9.10'
+    }
+    
     stages {
+        stage('Environment Setup') {
+            steps {
+                echo '🔧 Vérification de l\'environnement...'
+                echo 'Vérification de Maven:'
+                bat 'mvn -v'
+                echo '✅ Maven configuré correctement!'
+            }
+        }
+        
         stage('Build') {
             steps {
                 echo '🔨 Début de la compilation du projet...'
