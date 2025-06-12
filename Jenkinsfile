@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        // Configuration Maven pour Jenkins
+        // Configuration Maven pour Jenkins test push
         maven 'Maven-3.9.10'
     }
     
